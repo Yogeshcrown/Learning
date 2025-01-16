@@ -1,3 +1,5 @@
+//Viewport method is used to change the screensizes in the playwright
+
 const { test, expect, devices } = require('@playwright/test');
 const { LoginPage } = require('./Utils/LoginCC'); // Adjust path if necessary
 
