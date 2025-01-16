@@ -1,7 +1,7 @@
 const { test, expect, devices } = require('@playwright/test');
 const { LoginPage } = require('./Utils/LoginCC'); // Adjust path if necessary
 
-// Use iPhone 12 device descriptor
+// Use iPhone 12 device descriptor (different devices can be used just need to devices the model here)
 const iPhone8Plus = devices['iPhone 8 Plus'];
 
 // Apply iPhone 12 emulation
