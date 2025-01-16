@@ -1,1 +1,35 @@
+const { test, expect, devices } = require('@playwright/test');
+const { LoginPage } = require('./Utils/LoginCC'); // Adjust path if necessary
 
+// Use iPhone 12 device descriptor
+const iPhone8Plus = devices['iPhone 8 Plus'];
+
+// Apply iPhone 12 emulation
+test.use({
+  ...iPhone8Plus,
+});
+
+// Test case
+test('Test to use emulating device in a playwright', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+  
+    // Navigate to the login page and perform login
+    await loginPage.navigateToLoginPage();
+    await loginPage.login('yogeshqa123@outlook.com', 'Crown@123');
+    await page.goto('https://staging.inventive.ai/projects');
+  
+    await expect(page.getByPlaceholder('Search for any proposal')).toBeVisible();
+    await page.getByPlaceholder('Search for any proposal').fill('Automation Test');
+    await page.goto('https://staging.inventive.ai/projects?search=Automation+Test');
+  
+    // Verify button text contains "testing"
+    const button = page.getByRole('button', { name: 'Automation Test' });
+    await expect(button).toHaveText(/Automation/i);
+  
+    // Click the button after verification
+    await button.click();
+  
+    // Verify 'Project title' is visible after clicking
+    await expect(page.getByLabel('Project title')).toBeVisible();
+  });
+  
