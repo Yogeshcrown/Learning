@@ -2,7 +2,7 @@ const { test, expect, devices } = require('@playwright/test');
 const { LoginPage } = require('./Utils/LoginCC'); // Adjust path if necessary
 
 test.use({
-    browserName: 'Chromium', //define the browser name here to run in the particular broswer
+    browserName: 'chromium', //define the browser name here to run in the particular broswer
     //viewport: { width: 1280, height: 720 }, // Optional: Desktop resolution
   });
 
