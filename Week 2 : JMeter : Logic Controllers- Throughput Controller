@@ -1,1 +1,5 @@
-
+Jmeter:-
+1. Logic Controllers- Throughput Controller - https://www.youtube.com/watch?v=ep7tnDJMYmM
+2. Building a distributed Load Test
+3. Parameterization, CSV Dataset Config, User Defined Variables
+4. Correlation with Regular Expression Extractor
