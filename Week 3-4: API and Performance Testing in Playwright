@@ -3,3 +3,16 @@ Mocking Requests: Use Playwright to intercept and mock network requests for test
 Performance Timing: Track page performance metrics like load time using Playwright’s `page.metrics()` method.  
 Accessibility Testing: Use Playwright’s built-in tools and libraries (like axe-core) for accessibility validation.  
 Visual Testing: Explore visual comparison tools like pixel match for UI regression testing.
+
+
+#"API Testing: Learn to make API requests (`request.get`, `request.post`) and validate responses."
+
+test('Verify GET response status is 200 for staging.inventive.ai', async ({ request }) => {
+    const response = await request.get('https://staging.inventive.ai');
+    
+    // Assert the response status
+    expect(response.status()).toBe(200);
+    
+    // Optional: Print response body if needed
+    console.log(await response.text());
+  });
