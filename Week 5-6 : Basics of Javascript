@@ -1,0 +1,9 @@
+1. Functions:
+   - Learn to declare and call functions.
+   - Understand the difference between function declarations and expressions.
+   - Explore arrow functions (`=>`) and the concept of parameters and return values.
+
+2. DOM Manipulation:
+   - Learn how to select elements using `getElementById`, `querySelector`, and `querySelectorAll`.
+   - Understand how to add, remove, and modify HTML elements and attributes.
+   - Learn how to handle events (e.g., `click`, `mouseover`, `submit`) with `addEventListener`.
