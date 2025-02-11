@@ -1,0 +1,5 @@
+API Testing: Learn to make API requests (`request.get`, `request.post`) and validate responses.  
+Mocking Requests: Use Playwright to intercept and mock network requests for testing edge cases.  
+Performance Timing: Track page performance metrics like load time using Playwright’s `page.metrics()` method.  
+Accessibility Testing: Use Playwright’s built-in tools and libraries (like axe-core) for accessibility validation.  
+Visual Testing: Explore visual comparison tools like pixel match for UI regression testing.
