@@ -7,7 +7,7 @@ Visual Testing: Explore visual comparison tools like pixel match for UI regressi
 
 #"API Testing: Learn to make API requests (`request.get`, `request.post`) and validate responses."
 
-test('Verify GET response status is 200 for staging.inventive.ai', async ({ request }) => {
+1. test('Verify GET response status is 200 for staging.inventive.ai', async ({ request }) => {
     const response = await request.get('https://staging.inventive.ai');
     
     // Assert the response status
@@ -16,3 +16,30 @@ test('Verify GET response status is 200 for staging.inventive.ai', async ({ requ
     // Optional: Print response body if needed
     console.log(await response.text());
   });
+
+2. test.only('Learn to make API requests (`request.get`, `request.post`) and validate responses, @learning', async ({ request }) => {
+    const loginPayload = {
+        "userEmail": "anshika@gmail.com",
+        "userPassword": "Iamking@000"
+      };
+
+    const getResponse = await request.get("https://rahulshettyacademy.com/client/");
+
+    const loginResponse = await request.post("https://rahulshettyacademy.com/api/ecom/auth/login", {
+        data: loginPayload
+    });
+
+    // Check if the response is successful
+    expect(getResponse.status()).toBe(200);
+    expect(loginResponse.status()).toBe(200);
+    expect(loginResponse.ok()).toBeTruthy();
+
+    // Optionally, you can log the response
+    const responseBody = await loginResponse.json();
+    console.log(responseBody);
+});
+
+#Mocking Requests: Use Playwright to intercept and mock network requests for testing edge cases.
+
+
+
