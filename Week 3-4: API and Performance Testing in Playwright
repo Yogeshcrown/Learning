@@ -108,4 +108,36 @@ test('@QW Security test request intercept', async ({ page }) => {
 
 Performance Timing: Track page performance metrics like load time using Playwright’s `page.metrics()` method.  
 
+test.only('Performance Timing: Track page performance metrics', async ({ page }) => {
+    // Start measuring time before navigation
+    const startTime = Date.now();
+
+    // Navigate to the page
+    await page.goto('https://www.4amworld.com/');
+
+    // Wait for the page to fully load
+    await page.waitForLoadState('load');
+
+    // Capture performance metrics using JavaScript's performance API
+    const metrics = await page.evaluate(() => {
+        return JSON.stringify(performance.timing);
+    });
+
+    // Parse metrics
+    const perfTiming = JSON.parse(metrics);
+
+    // Calculate important performance values
+    const loadTime = perfTiming.loadEventEnd - perfTiming.navigationStart;
+    const domContentLoadedTime = perfTiming.domContentLoadedEventEnd - perfTiming.navigationStart;
+    const connectTime = perfTiming.connectEnd - perfTiming.connectStart;
+    const requestTime = perfTiming.responseEnd - perfTiming.requestStart;
+
+    // Log metrics
+    console.log('Page Load Time:', loadTime, 'ms');
+    console.log('DOM Content Loaded Time:', domContentLoadedTime, 'ms');
+    console.log('Connection Time:', connectTime, 'ms');
+    console.log('Request Time:', requestTime, 'ms');
+});
+
+
 
