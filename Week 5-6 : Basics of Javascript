@@ -95,5 +95,31 @@ console.log(sumAll(1, 2, 3, 4, 5)); // Output: 15
 1.2. Functions - Understand the difference between function declarations and expressions.
 ========================================================================================
 
+// Function Declaration
+function greet() {
+    console.log("Hello from a function declaration!");
+}
+
+// Calling the function declaration (can be called before or after its definition)
+greet(); 
+
+// Function Expression (Anonymous)
+const greetExpression = function() {
+    console.log("Hello from a function expression!");
+};
+
+// Calling the function expression (must be called after its definition)
+greetExpression(); 
+
+// Function Expression (Named)
+const namedGreetExpression = function sayHello() {
+    console.log("Hello from a named function expression!");
+};
+
+// Calling the named function expression
+namedGreetExpression();
+
+// Trying to call sayHello() directly would result in an error because it’s scoped within the expression
+// sayHello(); // ❌ Uncaught ReferenceError: sayHello is not defined
 
 
