@@ -1,0 +1,15 @@
+Topic to Cover
+================
+1. Promises and Async/Await:
+   - Understand how to create and handle promises (`then`, `catch`, `finally`).
+   - Learn how to use `async` and `await` for cleaner asynchronous code.
+
+2. Classes and Inheritance:
+   - Learn about ES6 classes and how to define constructors, methods, and properties.
+   - Understand prototypal inheritance and how to extend classes.
+
+3. Modules:
+   - Learn how to split your code into modules using `export` and `import`.
+
+4. Error Handling Best Practices:
+   - Explore throwing custom errors and handling specific error scenarios.
