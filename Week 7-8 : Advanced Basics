@@ -1,0 +1,354 @@
+Topics to cover 
+===============
+1. Objects and Arrays:
+   - Learn how to create and manipulate objects and arrays.
+   - Explore object properties, array methods (`push`, `pop`, `map`, `filter`, `reduce`).
+
+2. JavaScript in the Browser:
+   - Understand how to work with `window` and `document` objects.
+   - Learn about timers (`setTimeout`, `setInterval`).
+
+3. Introduction to Asynchronous JavaScript:
+   - Learn about `setTimeout`, `setInterval`, and callbacks.
+   - Understand the concept of asynchronous execution.
+
+
+1. Objects and Arrays:- Learn how to create and manipulate objects and arrays.
+===============================================================================
+// ✅ Creating and Manipulating Arrays
+let fruits = ["Apple", "Banana", "Cherry"];
+
+// Adding elements
+fruits.push("Mango"); // Adds to the end
+fruits.unshift("Pineapple"); // Adds to the beginning
+
+// Removing elements
+fruits.pop(); // Removes last element
+fruits.shift(); // Removes first element
+
+// Accessing elements
+console.log("First Fruit:", fruits[0]); // Accessing an element
+console.log("All Fruits:", fruits);
+
+// Looping through an array
+fruits.forEach((fruit, index) => {
+    console.log(`Fruit ${index + 1}: ${fruit}`);
+});
+
+// ✅ Creating and Manipulating Objects
+let person = {
+    name: "John Doe",
+    age: 30,
+    profession: "Software Engineer",
+    skills: ["JavaScript", "React", "Node.js"]
+};
+
+// Accessing object properties
+console.log("Person's Name:", person.name);
+console.log("Person's Skills:", person.skills.join(", "));
+
+// Adding a new property
+person.country = "USA";
+
+// Updating a property
+person.age = 31;
+
+// Deleting a property
+delete person.profession;
+
+// Looping through an object
+console.log("Updated Person:");
+for (let key in person) {
+    console.log(`${key}: ${person[key]}`);
+}
+
+// ✅ Array of Objects
+let employees = [
+    { name: "Alice", role: "Developer" },
+    { name: "Bob", role: "Designer" },
+    { name: "Charlie", role: "Manager" }
+];
+
+// Using map() to transform data
+let employeeRoles = employees.map(emp => `${emp.name} is a ${emp.role}`);
+console.log(employeeRoles.join("\n"));
+
+// Using filter() to find Developers
+let developers = employees.filter(emp => emp.role === "Developer");
+console.log("Developers:", developers);
+
+// Using find() to search for a specific employee
+let employee = employees.find(emp => emp.name === "Bob");
+console.log("Found Employee:", employee);
+
+
+1. Objects and Arrays:- Explore object properties, array methods (`push`, `pop`, `map`, `filter`, `reduce`)
+===========================================================================================================
+
+// ✅ Working with Objects
+let user = {
+    name: "Alice",
+    age: 25,
+    city: "New York"
+};
+
+// Accessing object properties
+console.log("User Name:", user.name);
+console.log("User Age:", user["age"]);
+
+// Adding a new property
+user.country = "USA";
+console.log("Updated User:", user);
+
+// Deleting a property
+delete user.city;
+console.log("User after deletion:", user);
+
+// ✅ Working with Arrays
+let numbers = [10, 20, 30, 40, 50];
+
+// push() - Adds an element to the end of the array
+numbers.push(60);
+console.log("After push:", numbers);
+
+// pop() - Removes the last element from the array
+numbers.pop();
+console.log("After pop:", numbers);
+
+// map() - Creates a new array by applying a function to each element
+let doubledNumbers = numbers.map(num => num * 2);
+console.log("Doubled Numbers:", doubledNumbers);
+
+// filter() - Returns a new array with elements that meet a condition
+let greaterThanTwenty = numbers.filter(num => num > 20);
+console.log("Numbers greater than 20:", greaterThanTwenty);
+
+// reduce() - Reduces an array to a single value (sum in this case)
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log("Sum of Numbers:", sum);
+
+2. JavaScript in the Browser:- Understand how to work with `window` and `document` objects.
+============================================================================================
+
+// ✅ Working with the `window` object
+console.log("Window Width:", window.innerWidth); // Get the browser window width
+console.log("Window Height:", window.innerHeight); // Get the browser window height
+
+// Alert, Confirm, and Prompt
+// window.alert("Hello! Welcome to JavaScript in the Browser!");
+// let userConfirmed = window.confirm("Do you want to continue?");
+// let userName = window.prompt("Enter your name:");
+
+// ✅ Working with the `document` object
+// Selecting an element by ID
+let heading = document.getElementById("title");
+heading.textContent = "JavaScript in the Browser"; // Modifying text content
+
+// Selecting elements by class and changing style
+let items = document.getElementsByClassName("list-item");
+for (let item of items) {
+    item.style.color = "blue"; // Change text color
+}
+
+// Selecting elements using querySelector
+let firstItem = document.querySelector(".list-item");
+firstItem.style.fontWeight = "bold";
+
+// Creating a new element and appending it
+let newParagraph = document.createElement("p");
+newParagraph.textContent = "This paragraph was added using JavaScript!";
+document.body.appendChild(newParagraph);
+
+// Event Listener: Change background color on button click
+document.getElementById("changeColorBtn").addEventListener("click", () => {
+    document.body.style.backgroundColor = "lightblue";
+});
+
+
+HTML code 
+==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript in the Browser</title>
+</head>
+<body>
+    <h1 id="title">Original Heading</h1>
+    <ul>
+        <li class="list-item">Item 1</li>
+        <li class="list-item">Item 2</li>
+        <li class="list-item">Item 3</li>
+    </ul>
+    <button id="changeColorBtn">Change Background Color</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+2. JavaScript in the Browser:- Learn about timers (`setTimeout`, `setInterval`).
+=================================================================================
+JS Code 
+=======
+
+// ✅ setTimeout Example: Execute a function after a delay
+setTimeout(() => {
+    console.log("This message appears after 3 seconds!");
+    document.getElementById("message").textContent = "3 seconds passed!";
+}, 3000); // Runs once after 3 seconds
+
+// ✅ setInterval Example: Update the counter every second
+let count = 0;
+let counterElement = document.getElementById("counter");
+
+let intervalId = setInterval(() => {
+    count++;
+    counterElement.textContent = `Counter: ${count}`;
+
+    // Stop the interval after 10 seconds
+    if (count === 10) {
+        clearInterval(intervalId);
+        console.log("Counter stopped at 10.");
+    }
+}, 1000); // Runs every second
+
+// ✅ Button to Stop the Interval Manually
+document.getElementById("stopButton").addEventListener("click", () => {
+    clearInterval(intervalId);
+    console.log("Counter stopped manually.");
+});
+
+
+HTML Code 
+==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Timers</title>
+</head>
+<body>
+    <h1>JavaScript Timers: setTimeout & setInterval</h1>
+    <p id="message">Wait for the message...</p>
+    <p id="counter">Counter: 0</p>
+    <button id="stopButton">Stop Counter</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+3. Introduction to Asynchronous JavaScript:- Learn about `setTimeout`, `setInterval`, and callbacks.
+====================================================================================================
+JS Code 
+=======
+// ✅ setTimeout Example: Execute a function after a delay
+console.log("⏳ Waiting for 3 seconds...");
+setTimeout(() => {
+    console.log("✅ setTimeout executed: 3 seconds passed!");
+    document.getElementById("message").textContent = "3 seconds passed!";
+}, 3000); // Runs once after 3 seconds
+
+// ✅ setInterval Example: Update a counter every second
+let count = 0;
+let counterElement = document.getElementById("counter");
+
+let intervalId = setInterval(() => {
+    count++;
+    counterElement.textContent = `Counter: ${count}`;
+    console.log(`⏲️ Counter: ${count}`);
+
+    // Stop the interval after 10 seconds
+    if (count === 10) {
+        clearInterval(intervalId);
+        console.log("🛑 Counter stopped at 10.");
+    }
+}, 1000); // Runs every second
+
+// ✅ Callback Function Example
+function fetchData(callback) {
+    console.log("📡 Fetching data...");
+    setTimeout(() => {
+        let data = "🌍 Data received!";
+        callback(data);
+    }, 2000);
+}
+
+// Using the callback function
+fetchData((response) => {
+    console.log("✅ Callback executed:", response);
+    document.getElementById("callbackMessage").textContent = response;
+});
+
+// ✅ Button to Stop the Interval Manually
+document.getElementById("stopButton").addEventListener("click", () => {
+    clearInterval(intervalId);
+    console.log("🛑 Counter stopped manually.");
+});
+
+
+HTML Code 
+=========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript: setTimeout, setInterval & Callbacks</h1>
+    <p id="message">Wait for the setTimeout message...</p>
+    <p id="counter">Counter: 0</p>
+    <p id="callbackMessage">Fetching data...</p>
+    <button id="stopButton">Stop Counter</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+3. Introduction to Asynchronous JavaScript:- Understand the concept of asynchronous execution.
+==============================================================================================
+JS Code
+=======
+console.log("1️⃣ Start of script");
+
+// ✅ setTimeout Example (Executes after a delay)
+setTimeout(() => {
+    console.log("2️⃣ setTimeout: Executed after 2 seconds");
+}, 2000);
+
+// ✅ Callback Example (Asynchronous function with a callback)
+function fetchDataCallback(callback) {
+    console.log("3️⃣ Fetching data (simulated delay)...");
+    setTimeout(() => {
+        callback("✅ Data received via Callback");
+    }, 3000);
+}
+
+fetchDataCallback((data) => {
+    console.log("4️⃣ Callback executed:", data);
+});
+
+// ✅ Promise Example (Asynchronous operation)
+function fetchDataPromise() {
+    return new Promise((resolve) => {
+        console.log("5️⃣ Fetching data using Promise...");
+        setTimeout(() => {
+            resolve("✅ Data received via Promise");
+        }, 2500);
+    });
+}
+
+fetchDataPromise().then((data) => {
+    console.log("6️⃣ Promise resolved:", data);
+});
+
+// ✅ Async/Await Example (Using async functions)
+async function fetchDataAsync() {
+    console.log("7️⃣ Fetching data using async/await...");
+    let result = await new Promise((resolve) => setTimeout(() => resolve("✅ Data received via Async/Await"), 2000));
+    console.log("8️⃣ Async/Await Result:", result);
+}
+
+fetchDataAsync();
+
+console.log("9️⃣ End of script (Executes before async operations complete)");
