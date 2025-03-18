@@ -1,0 +1,140 @@
+Projects - 1 : GitHub Actions Workflow for Inventive.ai Production Testing
+============================================================================
+
+Code for playwright.yml
+=======================
+name: Playwright Tests - Production
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"  # Runs every 2 hours
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Using Linux Runner
+
+    env:
+      BASE_URL: "https://app.inventive.ai/"  # Production environment URL
+      MS_EMAIL: "qa_tester@inventive.ai"
+      MS_PASSWORD: "SecurePassword123"
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Ensure compatibility
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Tests
+        run: npx playwright test
+
+      - name: Upload Test Report (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+
+      - name: Send Email Notification on Failure
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: "qa_alerts@inventive.ai"
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "🚨 Inventive.ai Prod Test Failed!"
+          to: "qa_team@inventive.ai, dev_team@inventive.ai"
+          from: "GitHub Actions"
+          body: "Playwright tests for production have failed. Please check the logs in the Playwright report."
+
+
+📌 Key Features of this GitHub Action
+1️⃣ Runs every 2 hours (cron: "0 */2 * * *")
+2️⃣ Automates testing using Playwright on Inventive.ai’s production URL.
+3️⃣ Stores environment variables securely (BASE_URL, MS_EMAIL, etc.).
+4️⃣ Uploads test reports on failure.
+5️⃣ Sends an email alert if any test fails.
+
+Projects - 2 : Creating the Viral Content Creator Page for generating content using the Together AI Api and integrate it in the Website
+========================================================================================================================================
+
+Link :- https://www.4amworld.com/viral-content-creator
+
+In my journey of leveraging AI for content automation, I successfully developed and integrated the Viral Content Creator Page into my website, 4amworld.com. This project is a significant milestone in my pursuit of AI-driven content generation and automation.
+
+🔹 Key Achievements:
+✅ Developed an AI-Powered Content Generator – Built a system that automatically creates trending content using the Together AI API.
+✅ Seamless Integration with 4amworld.com – Integrated the tool into my website, ensuring a smooth and intuitive user experience.
+✅ Automated Content Workflow – Enabled one-click content generation and publishing, reducing manual effort.
+✅ Optimized for SEO & Engagement – Ensured that the generated content is search-friendly and engaging, driving organic traffic.
+
+🚀 How It Works:
+1️⃣ Fetches Trending Topics – Uses Google Trends API to identify high-engagement topics.
+2️⃣ Generates AI-Powered Content – Together AI processes the data and crafts SEO-optimized articles.
+3️⃣ Auto-Publishing on Wix – Automates the posting process directly on 4amworld.com, ensuring consistent content updates.
+
+🌟 Impact & Benefits:
+Increased Website Traffic – AI-generated content attracts more visitors.
+Saved Time & Effort – Eliminated the need for manual research and writing.
+Scalability – The system can generate multiple content pieces daily, helping scale content creation efficiently.
+This achievement marks a big step forward in AI-powered automation and reinforces my expertise in Playwright automation, API integration, and AI-driven content strategies. 🚀
+
+
+Project 3 :- Publishing the LifeSavor App on Google Play Store
+================================================================
+
+Link : https://play.google.com/store/apps/details?id=com.fouramworld.lifesavor&hl=en
+
+I successfully developed and published the LifeSavor app on the Google Play Store, marking a major milestone in my journey as an app developer. LifeSavor is designed to provide useful and practical solutions, helping users manage tasks efficiently and enhance productivity.
+
+🔹 Key Achievements:
+✅ Designed & Developed LifeSavor App – Built using Jetpack Compose with Material 3, ensuring a modern and seamless UI/UX.
+✅ Implemented Firebase Authentication – Integrated email/password login for secure access.
+✅ Optimized for Play Store Compliance – Ensured the app met Google Play policies for a smooth approval process.
+✅ Published on Google Play Store – Successfully deployed the app, making it accessible to a global audience.
+
+🚀 The Journey of Publishing:
+1️⃣ App Development – Designed and coded the app, implementing CRUD operations, authentication, and intuitive UI/UX.
+2️⃣ Testing & Debugging – Performed thorough manual and automated testing to ensure a bug-free experience.
+3️⃣ Creating APK & Play Store Assets – Generated the APK, designed the Play Store listing, and prepared screenshots, descriptions, and policies.
+4️⃣ Submission & Approval – Followed Google Play guidelines, resolved policy checks, and successfully published the app.
+
+🌟 Impact & Future Plans:
+📈 Increased Reach – The app is now available for global users to download and use.
+🔄 Continuous Updates – Planning to roll out new features, optimizations, and enhancements.
+🔐 Improved Security & Performance – Ensuring the app remains secure, fast, and user-friendly.
+This achievement is a testament to my expertise in Android development, Firebase integration, and Play Store publishing, paving the way for more exciting projects in the future. 🚀
+
+
+Project 4 :- Automating Blog Publishing with Playwright
+=======================================================
+I successfully developed a Playwright automation script that streamlines and automates the process of publishing blog posts on my website, 4amworld.com. This automation has significantly reduced manual effort and ensured a consistent content flow, helping me focus on content quality rather than repetitive publishing tasks.
+
+🔹 Key Achievements:
+✅ Developed a Fully Automated Publishing Script – Built using Playwright, the script automates the entire blog posting workflow.
+✅ Integrated Google Login with Session Handling – Implemented session cookie storage, allowing seamless login without manual intervention.
+✅ AI-Powered Content Generation – Combined automation with Together AI API, enabling auto-generation of trending blog posts.
+✅ Scheduled Publishing – Configured the script to run on a predefined schedule, ensuring regular content updates on 4amworld.com.
+
+🚀 How It Works:
+1️⃣ Logs into Wix Blog Dashboard – Uses Playwright to log in via Google authentication, bypassing security challenges with saved session cookies.
+2️⃣ Fetches AI-Generated Content – Retrieves auto-created articles using the Together AI API.
+3️⃣ Formats & Publishes Posts – Automates the process of adding titles, body content, tags, categories, and images, ensuring SEO-friendly posts.
+4️⃣ Verifies Successful Publication – Checks if the post is live and visible on the website after submission.
+
+🌟 Impact & Benefits:
+⏳ Time-Saving – Eliminates manual blog posting, reducing effort and ensuring faster content updates.
+🔄 Scalability – Allows bulk publishing of AI-generated articles, improving content consistency.
+📈 SEO Optimization – Ensures that every post is properly formatted and structured, boosting search rankings.
+🔧 Error-Free Publishing – Reduces human errors and guarantees that all posts follow the same structured format.
+This Playwright automation script is a game-changer for my content strategy, allowing me to focus on growth while AI and automation handle the repetitive tasks. 🚀
