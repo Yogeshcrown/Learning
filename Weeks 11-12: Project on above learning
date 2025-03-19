@@ -16,8 +16,8 @@ jobs:
 
     env:
       BASE_URL: "https://app.inventive.ai/"  # Production environment URL
-      MS_EMAIL: "qa_tester@inventive.ai"
-      MS_PASSWORD: "SecurePassword123"
+      MS_EMAIL: "yogesh@inventive.ai"
+      MS_PASSWORD: "********"
 
     steps:
       - name: Checkout Repository
@@ -50,10 +50,10 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: "qa_alerts@inventive.ai"
+          username: "yogesh@inventive.ai"
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🚨 Inventive.ai Prod Test Failed!"
-          to: "qa_team@inventive.ai, dev_team@inventive.ai"
+          to: "yogesh.sharma@crownstack.com"
           from: "GitHub Actions"
           body: "Playwright tests for production have failed. Please check the logs in the Playwright report."
 
@@ -138,3 +138,57 @@ I successfully developed a Playwright automation script that streamlines and aut
 📈 SEO Optimization – Ensures that every post is properly formatted and structured, boosting search rankings.
 🔧 Error-Free Publishing – Reduces human errors and guarantees that all posts follow the same structured format.
 This Playwright automation script is a game-changer for my content strategy, allowing me to focus on growth while AI and automation handle the repetitive tasks. 🚀
+
+
+Project 5 : AI Image Creator - A Learning Experience in AI & Web Development  
+=============================================================================
+Project Link: [AI Image Creator on 4amworld.com](https://www.4amworld.com/ai-image-creator)  
+
+ Overview
+AI Image Creator is an advanced web tool that enables users to generate AI-powered images effortlessly. The project was developed as a learning initiative to explore AI image generation, backend deployment, and seamless web integration. It marks an important step in automating creative workflows and making AI-generated art accessible to everyone.  
+
+ Project Objectives
+- Develop an AI-powered tool that generates images from text prompts.
+- Integrate a free AI model for image generation to avoid high API costs.
+- Deploy the backend on Render and the frontend on Wix-based 4amworld.com.
+- Ensure smooth user experience and optimize performance for faster image generation.
+
+ Technologies Used
+- Frontend: Wix (Custom JavaScript integrations)
+- Backend: Node.js, Express.js
+- AI Model: Together AI & Hugging Face for free AI image generation
+- Hosting: Render (for backend), Wix (for frontend)
+- Database & Storage: JSON-based storage for API responses
+
+ Challenges Faced
+ 1. Finding a Free AI Image Generation Model
+   - Initially, OpenAI’s API was considered, but it was costly. Instead, Together AI and Hugging Face were explored for free model usage.
+   
+ 2. Backend Deployment Issues on Render
+   - Faced multiple deployment failures due to Node.js version mismatches and dependency errors.
+   - Resolved by specifying correct package versions and fixing environment variable configurations.
+   
+ 3. Integrating Backend with Wix-based Frontend
+   - Wix has limitations on backend scripts, requiring CORS handling and API request optimizations.
+   - Implemented proper API authentication and request handling to ensure smooth connectivity.
+   
+ 4. Performance Optimization
+   - Initial response times were slow due to high processing loads.
+   - Implemented caching strategies and optimized API calls to enhance speed.
+   
+ Key Learnings
+1. AI Model Selection Matters: Exploring multiple AI providers (OpenAI, Together AI, Hugging Face) helped in choosing a cost-effective solution.
+2. Deployment Best Practices: Handling environment variables, debugging Render deployment failures, and setting up correct Node.js versions.
+3. Wix API Integrations: Understanding Wix limitations and workarounds to successfully integrate external AI services.
+4. Backend Optimization: Improving request handling, error logging, and caching to reduce processing times.
+
+ Future Enhancements
+- Adding more AI models for better image variety.
+- Enabling customization options like style selection and resolution control.
+- Implementing a user-friendly dashboard for managing generated images.
+
+The AI Image Creator on 4amworld.com is a successful experiment in leveraging AI for creative automation. This project provided valuable hands-on experience in AI integration, backend deployment, and frontend optimization. With future updates, it can evolve into a more powerful tool for AI-generated art enthusiasts.  
+
+🚀 Explore the tool here: [AI Image Creator](https://www.4amworld.com/ai-image-creator)
+
+
