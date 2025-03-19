@@ -123,3 +123,263 @@ namedGreetExpression();
 // sayHello(); // ❌ Uncaught ReferenceError: sayHello is not defined
 
 
+1. Functions:- Explore arrow functions (=>) and the concept of parameters and return values.
+=============================================================================================
+
+// Basic arrow function with no parameters
+const greet = () => "Hello, World!";
+console.log(greet()); // Output: Hello, World!
+
+// Arrow function with one parameter
+const square = num => num * num;
+console.log(square(5)); // Output: 25
+
+// Arrow function with multiple parameters
+const add = (a, b) => a + b;
+console.log(add(3, 7)); // Output: 10
+
+// Arrow function with a block body (explicit return)
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(4, 6)); // Output: 24
+
+// Arrow function returning an object
+const createUser = (name, age) => ({ name, age });
+console.log(createUser("Alice", 25)); // Output: { name: 'Alice', age: 25 }
+
+// Using arrow function inside array methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Arrow function with default parameters
+const greetUser = (name = "Guest") => `Hello, ${name}!`;
+console.log(greetUser()); // Output: Hello, Guest!
+console.log(greetUser("Yogesh")); // Output: Hello, Yogesh!
+
+
+2. DOM Manipulation:- Learn how to select elements using getElementById, querySelector, and querySelectorAll.
+==============================================================================================================
+
+// Basic arrow function with no parameters
+const greet = () => "Hello, World!";
+console.log(greet()); // Output: Hello, World!
+
+// Arrow function with one parameter
+const square = num => num * num;
+console.log(square(5)); // Output: 25
+
+// Arrow function with multiple parameters
+const add = (a, b) => a + b;
+console.log(add(3, 7)); // Output: 10
+
+// Arrow function with a block body (explicit return)
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(4, 6)); // Output: 24
+
+// Arrow function returning an object
+const createUser = (name, age) => ({ name, age });
+console.log(createUser("Alice", 25)); // Output: { name: 'Alice', age: 25 }
+
+// Using arrow function inside array methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Arrow function with default parameters
+const greetUser = (name = "Guest") => `Hello, ${name}!`;
+console.log(greetUser()); // Output: Hello, Guest!
+console.log(greetUser("Yogesh")); // Output: Hello, Yogesh!
+
+// DOM Manipulation: Selecting elements
+// Selecting an element by ID
+const heading = document.getElementById("title");
+console.log(heading.textContent);
+
+// Selecting an element using querySelector
+const firstParagraph = document.querySelector("p");
+console.log(firstParagraph.textContent);
+
+// Selecting multiple elements using querySelectorAll
+const allParagraphs = document.querySelectorAll("p");
+allParagraphs.forEach(paragraph => console.log(paragraph.textContent));
+
+// Changing the text content of an element
+document.getElementById("title").textContent = "New Title";
+
+// Modifying the style of an element
+document.querySelector("p").style.color = "blue";
+
+
+2. DOM Manipulation:- Understand how to add, remove, and modify HTML elements and attributes.
+=============================================================================================
+
+// Basic arrow function with no parameters
+const greet = () => "Hello, World!";
+console.log(greet()); // Output: Hello, World!
+
+// Arrow function with one parameter
+const square = num => num * num;
+console.log(square(5)); // Output: 25
+
+// Arrow function with multiple parameters
+const add = (a, b) => a + b;
+console.log(add(3, 7)); // Output: 10
+
+// Arrow function with a block body (explicit return)
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(4, 6)); // Output: 24
+
+// Arrow function returning an object
+const createUser = (name, age) => ({ name, age });
+console.log(createUser("Alice", 25)); // Output: { name: 'Alice', age: 25 }
+
+// Using arrow function inside array methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Arrow function with default parameters
+const greetUser = (name = "Guest") => `Hello, ${name}!`;
+console.log(greetUser()); // Output: Hello, Guest!
+console.log(greetUser("Yogesh")); // Output: Hello, Yogesh!
+
+// DOM Manipulation: Selecting elements
+// Selecting an element by ID
+const heading = document.getElementById("title");
+console.log(heading.textContent);
+
+// Selecting an element using querySelector
+const firstParagraph = document.querySelector("p");
+console.log(firstParagraph.textContent);
+
+// Selecting multiple elements using querySelectorAll
+const allParagraphs = document.querySelectorAll("p");
+allParagraphs.forEach(paragraph => console.log(paragraph.textContent));
+
+// Changing the text content of an element
+document.getElementById("title").textContent = "New Title";
+
+// Modifying the style of an element
+document.querySelector("p").style.color = "blue";
+
+// DOM Manipulation: Adding, Removing, and Modifying Elements
+// Creating a new element
+const newDiv = document.createElement("div");
+newDiv.textContent = "This is a new div";
+newDiv.style.backgroundColor = "lightgray";
+document.body.appendChild(newDiv);
+
+// Removing an element
+const removeElement = document.getElementById("title");
+if (removeElement) {
+    removeElement.remove();
+}
+
+// Modifying attributes
+const link = document.createElement("a");
+link.href = "https://www.example.com";
+link.textContent = "Visit Example";
+document.body.appendChild(link);
+
+// Changing an existing attribute
+document.querySelector("a").setAttribute("target", "_blank");
+
+
+2. DOM Manipulation:- Learn how to handle events (e.g., click, mouseover, submit) with addEventListener.
+==========================================================================================================
+
+// Basic arrow function with no parameters
+const greet = () => "Hello, World!";
+console.log(greet()); // Output: Hello, World!
+
+// Arrow function with one parameter
+const square = num => num * num;
+console.log(square(5)); // Output: 25
+
+// Arrow function with multiple parameters
+const add = (a, b) => a + b;
+console.log(add(3, 7)); // Output: 10
+
+// Arrow function with a block body (explicit return)
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(4, 6)); // Output: 24
+
+// Arrow function returning an object
+const createUser = (name, age) => ({ name, age });
+console.log(createUser("Alice", 25)); // Output: { name: 'Alice', age: 25 }
+
+// Using arrow function inside array methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Arrow function with default parameters
+const greetUser = (name = "Guest") => `Hello, ${name}!`;
+console.log(greetUser()); // Output: Hello, Guest!
+console.log(greetUser("Yogesh")); // Output: Hello, Yogesh!
+
+// DOM Manipulation: Selecting elements
+// Selecting an element by ID
+const heading = document.getElementById("title");
+console.log(heading.textContent);
+
+// Selecting an element using querySelector
+const firstParagraph = document.querySelector("p");
+console.log(firstParagraph.textContent);
+
+// Selecting multiple elements using querySelectorAll
+const allParagraphs = document.querySelectorAll("p");
+allParagraphs.forEach(paragraph => console.log(paragraph.textContent));
+
+// Changing the text content of an element
+document.getElementById("title").textContent = "New Title";
+
+// Modifying the style of an element
+document.querySelector("p").style.color = "blue";
+
+// DOM Manipulation: Adding, Removing, and Modifying Elements
+// Creating a new element
+const newDiv = document.createElement("div");
+newDiv.textContent = "This is a new div";
+newDiv.style.backgroundColor = "lightgray";
+document.body.appendChild(newDiv);
+
+// Removing an element
+const removeElement = document.getElementById("title");
+if (removeElement) {
+    removeElement.remove();
+}
+
+// Modifying attributes
+const link = document.createElement("a");
+link.href = "https://www.example.com";
+link.textContent = "Visit Example";
+document.body.appendChild(link);
+
+// Changing an existing attribute
+document.querySelector("a").setAttribute("target", "_blank");
+
+// DOM Manipulation: Handling Events
+// Handling a click event
+document.querySelector("button").addEventListener("click", () => {
+    alert("Button clicked!");
+});
+
+// Handling a mouseover event
+document.querySelector("p").addEventListener("mouseover", () => {
+    console.log("Mouse is over the paragraph!");
+});
+
+// Handling a form submit event
+document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent form submission
+    console.log("Form submitted!");
+});
